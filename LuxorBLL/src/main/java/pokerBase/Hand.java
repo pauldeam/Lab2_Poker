@@ -1,5 +1,7 @@
 package pokerBase;
 
+import java.util.ArrayList;
+
 public class Hand {
 
 	private ArrayList<Card> CardsInHand;
@@ -71,7 +73,15 @@ public class Hand {
 		Ace = ace;
 	}
 
-	public 
+	public Hand AddCardToHand(Card c){
+		CardsInHand.add(c);
+		return this;
+	}
+	
+	public Hand Draw(Deck d){
+		CardsInHand.add(d.drawFromDeck());
+		return this;
+	}
 	
 	
 }
