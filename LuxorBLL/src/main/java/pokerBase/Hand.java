@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Hand {
 
 	private ArrayList<Card> CardsInHand;
-	private ArrayList<Cards> BestCardsInHand;
+	private ArrayList<Card> BestCardsInHand;
 	private HandScore HandScore;
 	private boolean bScored = false;
 	private boolean Flush;
@@ -14,7 +14,7 @@ public class Hand {
 	
 	public Hand(){
 		CardsInHand = new ArrayList<Card>();
-		BestCardsInHand = new ArrayList<Cards>();
+		BestCardsInHand = new ArrayList<Card>();
 	}
 
 	public ArrayList<Card> getCardsInHand() {
@@ -25,11 +25,11 @@ public class Hand {
 		CardsInHand = cardsInHand;
 	}
 
-	public ArrayList<Cards> getBestCardsInHand() {
+	public ArrayList<Card> getBestCardsInHand() {
 		return BestCardsInHand;
 	}
 
-	public void setBestCardsInHand(ArrayList<Cards> bestCardsInHand) {
+	public void setBestCardsInHand(ArrayList<Card> bestCardsInHand) {
 		BestCardsInHand = bestCardsInHand;
 	}
 
@@ -73,13 +73,15 @@ public class Hand {
 		Ace = ace;
 	}
 
+	// adds a card to your hand
 	public Hand AddCardToHand(Card c){
 		CardsInHand.add(c);
 		return this;
 	}
 	
+	// takes card from deck
 	public Hand Draw(Deck d){
-		CardsInHand.add(d.drawFromDeck());
+		CardsInHand.add(d.Draw());
 		return this;
 	}
 	
